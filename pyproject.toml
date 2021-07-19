@@ -4,6 +4,29 @@ version = "0.1.0-alpha.0"
 description = ""
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 
+packages=[
+    {include = 'incolumepy/abstract-flask', from=''},
+]
+
+license = "MIT"
+readme = "README.md"
+homepage = ""
+repository = ""
+keywords = [""]
+classifiers = [
+  "License :: Free For Educational Use",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Topic :: Education",
+  "Topic :: Education:: Testing",
+  "Topic :: Utilities"
+]
+include = [
+  "LICENSE",
+]
+
 [tool.poetry.dependencies]
 python = "3.9.6"
 Flask = "^2.0.1"
