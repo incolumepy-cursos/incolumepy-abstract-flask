@@ -37,6 +37,7 @@ fontawesome-free = "^5.15.3"
 Flask-SQLAlchemy = "^2.5.1"
 Flask-Migrate = "^3.0.1"
 Flask-Bcrypt = "^0.7.1"
+Flask-Login = "^0.5.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
