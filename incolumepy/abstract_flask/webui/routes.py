@@ -3,7 +3,7 @@
 __author__ = '@britodfbr'
 from pathlib import Path
 from markdown import markdown
-from flask import Blueprint, render_template, current_app
+from flask import Blueprint, render_template, current_app, request
 
 bp = Blueprint('webui', __name__)
 
@@ -20,3 +20,26 @@ def about():
     readme = Path(current_app.root_path[:current_app.root_path.index('incolumepy', 50)]).joinpath('README.md')
     content = markdown(readme.read_text())
     return render_template('about.html', title=title, content=content)
+
+
+@bp.route('/styles.html')
+def styles():
+    return render_template('generic_page.html', title='Styles', content='')
+
+
+@bp.route('/contact.html')
+def contact():
+    return render_template('generic_page.html', title='Contact', content='')
+
+
+@bp.route('/category.html')
+def category():
+    cat = request.args.get('category')
+    return render_template('generic_page.html', title=f'Category :: {cat}', content=cat)
+
+
+@bp.route('/page')
+def generic_page():
+    title = request.args.get('title')
+    return render_template('generic_page.html', title=f'{title}', content=title)
+

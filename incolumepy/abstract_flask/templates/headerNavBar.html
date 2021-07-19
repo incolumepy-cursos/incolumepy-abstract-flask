@@ -16,28 +16,28 @@
                     <li class="has-children">
                         <a href="#0" title="">Categories</a>
                         <ul class="sub-menu">
-                            <li><a href="category.html">Design</a></li>
-                            <li><a href="category.html">Lifestyle</a></li>
-                            <li><a href="category.html">Photography</a></li>
-                            <li><a href="category.html">Vacation</a></li>
-                            <li><a href="category.html">Work</a></li>
-                            <li><a href="category.html">Health</a></li>
-                            <li><a href="category.html">Family</a></li>
-                            <li><a href="category.html">Relationship</a></li>
+                            <li><a href="{{url_for('webui.category', category='design')}}">Design</a></li>
+                            <li><a href="{{url_for('webui.category', category='lifestyle')}}">Lifestyle</a></li>
+                            <li><a href="{{url_for('webui.category', category='photography')}}">Photography</a></li>
+                            <li><a href="{{url_for('webui.category', category='vocation')}}">Vacation</a></li>
+                            <li><a href="{{url_for('webui.category', category='work')}}">Work</a></li>
+                            <li><a href="{{url_for('webui.category', category='health')}}">Health</a></li>
+                            <li><a href="{{url_for('webui.category', category='family')}}">Family</a></li>
+                            <li><a href="{{url_for('webui.category', category='relationship')}}">Relationship</a></li>
                         </ul>
                     </li>
                     <li class="has-children">
                         <a href="#0" title="">Blog</a>
                         <ul class="sub-menu">
-                        <li><a href="single-video.html">Video Post</a></li>
-                        <li><a href="single-audio.html">Audio Post</a></li>
-                        <li><a href="single-gallery.html">Gallery Post</a></li>
-                        <li><a href="single-standard.html">Standard Post</a></li>
+                        <li><a href="{{url_for('webui.generic_page', title='single-video')}}">Video Post</a></li>
+                        <li><a href="{{url_for('webui.generic_page', title='single-audio')}}">Audio Post</a></li>
+                        <li><a href="{{url_for('webui.generic_page', title='single-gallery')}}">Gallery Post</a></li>
+                        <li><a href="{{url_for('webui.generic_page', title='single-standard')}}">Standard Post</a></li>
                         </ul>
                     </li>
-                    <li><a href="styles.html" title="">Styles</a></li>
-                    <li><a href="about.html" title="">About</a></li>
-                    <li><a href="contact.html" title="">Contact</a></li>
+                    <li><a href="{{url_for('webui.styles')}}" title="">Styles</a></li>
+                    <li><a href="{{url_for('webui.about')}}" title="">About</a></li>
+                    <li><a href="{{url_for('webui.contact')}}" title="">Contact</a></li>
                 </ul> <!-- end header__nav -->
 
                 <a href="#0" title="Close Menu" class="s-header__overlay-close close-mobile-menu">Close</a>
