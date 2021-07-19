@@ -10,11 +10,6 @@ def create_app():
     # app.add_url_rule('/favicon.ico',
     #                  redirect_to=url_for('static', filename='images/favicons/favicon.ico'))
 
-    @app.route('/')
-    def home():
-        title = 'Homepage'
-        return render_template('index.html', title=title)
-
     # @app.route('/favicon.ico')
     # def favicon():
     #     ico = Path(app.root_path)
