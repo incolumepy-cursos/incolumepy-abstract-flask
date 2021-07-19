@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 __author__ = '@britodfbr'
-from pathlib import Path
-from flask import Flask, url_for, send_from_directory
-from . import webui
+
+from flask import Flask
+from .ext import webui
 
 
 def minimal_app():
