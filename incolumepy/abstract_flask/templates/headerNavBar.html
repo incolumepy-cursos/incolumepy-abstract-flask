@@ -2,7 +2,7 @@
         <div class="row s-header__content">
 
             <div class="s-header__logo">
-                <a class="logo" href="{{url_for('home')}}">
+                <a class="logo" href="{{url_for('webui.home')}}">
                     <img src="{{url_for('static', filename='images/logo.svg')}}" alt="{{title}}">
                 </a>
             </div>
@@ -12,7 +12,7 @@
                 <h2 class="s-header__nav-heading h6">Site Navigation</h2>
 
                 <ul class="s-header__nav">
-                    <li class="current"><a href="{{url_for('home')}}" title="">Home</a></li>
+                    <li class="current"><a href="{{url_for('webui.home')}}" title="">Home</a></li>
                     <li class="has-children">
                         <a href="#0" title="">Categories</a>
                         <ul class="sub-menu">
