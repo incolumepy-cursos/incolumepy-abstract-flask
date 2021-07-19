@@ -1,15 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 __author__ = "@britodfbr"
+from incolumepy.abstract_flask import create_app
+app = create_app()
 
-from flask import Flask
-
-
-def create_app():
-    app = Flask(__name__)
-
-    @app.route('/')
-    def hello():
-        return "Hello World!!"
-
-    return app
+if __name__ == '__main__':
+    app.run()

@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "incolumepy.abstract-flask"
+name = "incolumepy.abstract_flask"
 version = "0.1.0-alpha.0"
 description = ""
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 
 packages=[
-    {include = 'incolumepy/abstract-flask', from=''},
+    {include = 'incolumepy/abstract_flask', from=''},
 ]
 
 license = "MIT"
