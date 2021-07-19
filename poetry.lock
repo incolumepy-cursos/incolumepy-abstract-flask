@@ -88,6 +88,14 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "fontawesome-free"
+version = "5.15.3"
+description = "Font Awesome Free"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "gunicorn"
 version = "20.1.0"
 description = "WSGI HTTP Server for UNIX"
@@ -274,7 +282,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.6"
-content-hash = "ff721247b57394ff427c415f04e7319ff96301572bcd906e3fa69d6e526a6596"
+content-hash = "262869a5e2e9004d800cd28a4491be8c092a0b02502518e463d6e3a583f46969"
 
 [metadata.files]
 appdirs = [
@@ -304,6 +312,9 @@ colorama = [
 flask = [
     {file = "Flask-2.0.1-py3-none-any.whl", hash = "sha256:a6209ca15eb63fc9385f38e452704113d679511d9574d09b2cf9183ae7d20dc9"},
     {file = "Flask-2.0.1.tar.gz", hash = "sha256:1c4c257b1892aec1398784c63791cbaa43062f1f7aeb555c4da961b20ee68f55"},
+]
+fontawesome-free = [
+    {file = "fontawesome_free-5.15.3-py3-none-any.whl", hash = "sha256:8f27fff78ab6dcad5766a1479f22e86aae2fab0e86fcf92524e7eaed498f3edc"},
 ]
 gunicorn = [
     {file = "gunicorn-20.1.0-py3-none-any.whl", hash = "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e"},
