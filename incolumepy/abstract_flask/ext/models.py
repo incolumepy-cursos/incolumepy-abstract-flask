@@ -1,8 +1,75 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 __author__ = "@britodfbr"
+import datetime as dt
 from incolumepy.abstract_flask.ext.dbase import db, bc
-from incolumepy.abstract_flask.ext.posts.models import Post
+
+
+users = [
+    {"id": 1,
+     "fullname": "Ricardo Brito do Nascimento",
+     "username": "britodfbr",
+     "email": "britodfbr+1@gmail.com",
+     "password": "123",
+     "avatar": "user_color.svg",
+     "admin": True,
+     "outcast": False},
+    {"id": 2,
+     "fullname": "Eliana Brito",
+     "username": "elianabrito",
+     "email": "britodfbr+2@gmail.com",
+     "password": "123",
+     "avatar": "user_color.svg",
+     "admin": False,
+     "outcast": False},
+    {"id": 3,
+     "fullname": "Ana Brito",
+     "username": "anabrito",
+     "email": "britodfbr+3@gmail.com",
+     "password": "123",
+     "avatar": "user_color.svg",
+     "admin": False,
+     "outcast": False},
+    {"id": 4,
+     "fullname": "Ada Brito",
+     "username": "adabrito",
+     "email": "britodfbr+4@gmail.com",
+     "password": "123",
+     "avatar": "user_color.svg",
+     "admin": False,
+     "outcast": False},
+]
+posts = [
+    {"id": "1",
+     "title": "Parabéns",
+     "date_published": "2021-7-5 14:15",
+     "date_updated": "2021-7-5 14:15",
+     "content": "Meu aniversário",
+     "media": "",
+     "user_id": "4"},
+    {"id": "1",
+     "title": "Aniversário",
+     "date_published": "2021-7-5 14:15",
+     "date_updated": "2021-7-5 14:15",
+     "content": "Meu aniversário",
+     "media": "",
+     "user_id": "3"},
+    {"id": "1",
+     "title": "Parabéns",
+     "date_published": "2021-7-5 14:15",
+     "date_updated": "2021-7-5 14:15",
+     "content": "Meu aniversário",
+     "media": "",
+     "user_id": "2"},
+    {"id": "1",
+     "title": "Parabéns",
+     "date_published": "2021-7-5 14:15",
+     "date_updated": "2021-7-5 14:15",
+     "content": "Meu aniversário",
+     "media": "",
+     "user_id": "1"},
+
+]
 
 
 class User(db.Model):

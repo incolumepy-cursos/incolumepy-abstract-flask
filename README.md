@@ -30,3 +30,14 @@ baseados nos cursos Flask: [Python impressionador - Hashtag](https://player.vime
 - banco de dados PostgreSQL em prod (heroku.com);
 - publicar no heroku.com;
 
+##Clone
+
+    git clone https://github.com/incolumepy-cursos/incolumepy.abstract-flask
+
+
+## Executando
+
+    flask dropdb   # remover os dados do SGBD
+    flask createdb  # rodar uma vez, sempre que necessário
+    flask add-user -u admin -p 1234  # adiciona usuario admin
+    flask run

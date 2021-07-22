@@ -10,12 +10,12 @@ def init_app(app):
     for command in [createdb, dropdb]:
         app.cli.add_command(app.cli.command()(command))
 
-    # add a single command
-    @app.cli.command()
-    @click.option('--username', '-u', help='Username to login')
-    @click.option('--email', '-e', help='A valid email address')
-    @click.option('--password', '-p', help='Password to login')
-    @click.option('--avatar', '-a', default=None, help='Image to avatar user')
-    def add_user(username, email, password, avatar):
-        """Adds a new user to the database"""
-        return create_user(username, email, password, avatar)
+    # # add a single command
+    # @app.cli.command()
+    # @click.option('--username', '-u', help='Username to login')
+    # @click.option('--email', '-e', help='A valid email address')
+    # @click.option('--password', '-p', help='Password to login')
+    # @click.option('--avatar', '-a', default=None, help='Image to avatar user')
+    # def adduser(username, email, password, avatar):
+    #     """Adds a new user to the database"""
+    #     return create_user(username, email, password, avatar)
