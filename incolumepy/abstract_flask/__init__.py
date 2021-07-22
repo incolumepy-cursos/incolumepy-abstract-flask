@@ -3,7 +3,7 @@
 __author__ = '@britodfbr'
 from pathlib import Path
 from flask import Flask, url_for, send_from_directory
-from . import webui
+from .ext import webui
 
 
 def minimal_app():
