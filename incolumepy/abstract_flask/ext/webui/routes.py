@@ -14,6 +14,12 @@ def home():
     return render_template('index.html', title=title)
 
 
+@bp.route("/post")
+def post():
+    title = 'Post'
+    return render_template("post.html", title=title)
+
+
 @bp.route('/about.html')
 def about():
     title = "About"
