@@ -4,20 +4,21 @@ __author__ = '@britodfbr'
 from pathlib import Path
 from markdown import markdown
 from flask import Blueprint, render_template, current_app, request
-
+from incolumepy.abstract_flask.ext.models import posts, users
 bp = Blueprint('webui', __name__)
 
 
 @bp.route('/')
 def home():
     title = 'Homepage'
-    return render_template('index.html', title=title)
+    return render_template('index.html', title=title, posts=posts)
 
 
-@bp.route("/post")
-def post():
+@bp.route("/post/<int:post_id>")
+def post(post_id):
     title = 'Post'
-    return render_template("post.html", title=title)
+    post = posts[post_id]
+    return render_template("post.html", title=title, post=post)
 
 
 @bp.route('/about.html')
