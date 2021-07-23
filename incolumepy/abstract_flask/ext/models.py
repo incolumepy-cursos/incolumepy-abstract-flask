@@ -64,4 +64,14 @@ posts = [
      "content": "Meu aniversário",
      "media": "",
      "user_id": "1"},
+    {"id": 5,
+     "title": "Just a Standard Format Post",
+     "content": "Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor"
+                " nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua"
+                " cillum in consequat consequat in culpa in anim.",
+     "date_published": "2021-7-22 15:38",
+     "date_updated": "2021-7-22 15:38",
+     "media": "woodcraft-600.jpg",
+     "user_id": "2"
+     }
 ]
