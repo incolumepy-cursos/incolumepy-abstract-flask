@@ -12,6 +12,8 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get('EMAIL_USER')
     MAIL_PASSWORD = os.environ.get('EMAIL_PW')
+    # temas bootstrap(https://bootswatch.com/) ['materia', 'cosmo', 'lux', 'cerulean', 'litera']
+    FLASK_ADMIN_SWATCH = 'cerulean'
 
 
 def init_app(app):

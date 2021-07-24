@@ -10,6 +10,8 @@ admin = Admin()
 
 
 def init_app(app):
+    admin.name = 'Abstract Admin'
+    admin.template_mode = 'bootstrap4'
     admin.init_app(app)
     admin.add_view(ModelView(User, db.session))
 
