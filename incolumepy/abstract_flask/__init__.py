@@ -25,6 +25,11 @@ def create_app():
     def f():
         return redirect(url_for('static', filename="images/favicons/favicon.ico"))
 
+    @app.route("/fa.ico")
+    def fa():
+        ico = Path(app.root_path) / url_for('static', filename='images/favicons/favicon.ico').lstrip('/')
+        return send_file(ico, mimetype='image/vnd.microsoft.icon')
+
     @app.route("/fav.ico")
     def fav():
         ico = Path(app.root_path) / 'static/images/favicons/favicon.ico'
