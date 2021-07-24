@@ -38,10 +38,11 @@ class UserAdmin(ModelView):
 
     @action("tornar_admin", "Alternar Admin status", "Confirma?")
     def toggle_admin_status(self, ids):
-        for user in User.query.filter(User.id.in_(ids)).all():
+        users = User.query.filter(User.id.in_(ids)).all()
+        for user in users:
             user.admin = not user.admin
         db.session.commit()
-        flash("Status de administrador alterado com sucesso!", "success")
+        flash(f"{len(users)} status de administrador(es) alterado(s) com sucesso!", "success")
 
 
 def init_app(app):
