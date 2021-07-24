@@ -9,8 +9,13 @@ from incolumepy.abstract_flask.ext.dbase.models import User, Post, Comment, Cate
 admin = Admin()
 
 
+def format_mail(instance, request, user, *args, **kwargs):
+    return user.email.upper()
+
+
 class UserAdmin(ModelView):
     """Interface administrativa para User"""
+    column_formatters = {"email": format_mail}
 
 
 def init_app(app):
