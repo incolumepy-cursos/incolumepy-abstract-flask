@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 __author__ = "@britodfbr"
+from flask import flash
 from flask_admin import Admin
+from flask_admin.actions import action
 from flask_admin.contrib.sqla import ModelView
 from incolumepy.abstract_flask.ext.dbase import db
 from incolumepy.abstract_flask.ext.dbase.models import User, Post, Comment, Category
 import re
+
 admin = Admin()
 
 
@@ -18,11 +21,27 @@ def format_mail(instance, request, user, *args, **kwargs):
 
 class UserAdmin(ModelView):
     """Interface administrativa para User"""
+
     column_formatters = {
         "email": format_mail,
         "birthdate": lambda i, r, u, *args, **kwargs: f"{u.birthdate:%F}",
     }
-    column_list = ["fullname", "username", "email", "birthdate", "avatar", "admin", "outcast"]
+    column_list = [
+        "fullname",
+        "username",
+        "email",
+        "birthdate",
+        "avatar",
+        "admin",
+        "outcast",
+    ]
+
+    @action("tornar_admin", "Alternar Admin status", "Confirma?")
+    def toggle_admin_status(self, ids):
+        for user in User.query.filter(User.id.in_(ids)).all():
+            user.admin = not user.admin
+        db.session.commit()
+        flash("Status de administrador alterado com sucesso!", "success")
 
 
 def init_app(app):

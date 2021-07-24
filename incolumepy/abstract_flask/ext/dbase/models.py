@@ -14,6 +14,7 @@ class User(db.Model):
     birthdate = db.Column(db.DateTime(), nullable=False)
     avatar = db.Column(db.String(20), nullable=False, default="user_color.svg")
     admin = db.Column(db.Boolean(), nullable=False, default=False)
+    superadmin = db.Column(db.Boolean(), nullable=False, default=False)
     outcast = db.Column(db.Boolean(), nullable=False, default=False)   # pária(outcast)/banido(banished)
     posts = db.relationship("Post", backref="author", lazy=True)
     comments = db.relationship("Comment", backref="comment", lazy=True)
