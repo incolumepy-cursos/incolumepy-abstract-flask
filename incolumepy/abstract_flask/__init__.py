@@ -4,12 +4,14 @@ __author__ = '@britodfbr'
 from pathlib import Path
 from flask import Flask, send_from_directory, send_file, redirect, url_for
 from . import configure
-from .ext import webui
+from .ext import webui, dbase, cli
 
 
 def minimal_app():
     app = Flask(__name__)
     configure.init_app(app)
+    dbase.init_app(app)
+    cli.init_app(app)
     return app
 
 
