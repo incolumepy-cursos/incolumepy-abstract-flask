@@ -104,6 +104,17 @@ aws = ["boto"]
 azure = ["azure-storage-blob"]
 
 [[package]]
+name = "flask-login"
+version = "0.5.0"
+description = "User session management for Flask"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Flask = "*"
+
+[[package]]
 name = "fontawesome-free"
 version = "5.15.3"
 description = "Font Awesome Free"
@@ -314,7 +325,7 @@ locale = ["Babel (>=1.3)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.6"
-content-hash = "8aac0ed8493866ba915379954eff69347c51ef757a5f0ec741a21e677f2707d2"
+content-hash = "2a4720929a3aca7bce80e1c3a02512d62085635dba2649bd52744d4527462356"
 
 [metadata.files]
 appdirs = [
@@ -347,6 +358,10 @@ flask = [
 ]
 flask-admin = [
     {file = "Flask-Admin-1.5.8.tar.gz", hash = "sha256:eb06a1f31b98881dee53a55c64faebd1990d6aac38826364b280df0b2679ff74"},
+]
+flask-login = [
+    {file = "Flask-Login-0.5.0.tar.gz", hash = "sha256:6d33aef15b5bcead780acc339464aae8a6e28f13c90d8b1cf9de8b549d1c0b4b"},
+    {file = "Flask_Login-0.5.0-py2.py3-none-any.whl", hash = "sha256:7451b5001e17837ba58945aead261ba425fdf7b4f0448777e597ddab39f4fba0"},
 ]
 fontawesome-free = [
     {file = "fontawesome_free-5.15.3-py3-none-any.whl", hash = "sha256:8f27fff78ab6dcad5766a1479f22e86aae2fab0e86fcf92524e7eaed498f3edc"},
