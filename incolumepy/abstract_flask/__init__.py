@@ -19,8 +19,13 @@ def create_app():
     app = minimal_app()
     admin.init_app(app)
     webui.init_app(app)
+
     # app.add_url_rule('/favicon.ico',
     #                  redirect_to=url_for('static', filename='images/favicons/favicon.ico'))
+    @app.route("/favicon.ico")
+    def favicon():
+        ico = Path(app.root_path) / url_for('static', filename='images/favicons/favicon.ico').lstrip('/')
+        return send_file(ico, mimetype='image/vnd.microsoft.icon')
 
     @app.route("/f.ico")
     def f():
