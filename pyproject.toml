@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "incolumepy.abstract_flask"
-version = "0.1.1-alpha.0"
+version = "0.1.1-alpha.2"
 description = ""
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 
