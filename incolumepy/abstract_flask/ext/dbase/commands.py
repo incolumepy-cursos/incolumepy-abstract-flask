@@ -4,11 +4,11 @@ __author__ = '@britodfbr'
 from .models import db
 
 
-def create_db():
+def createdb():
     """Creates database"""
     db.create_all()
 
 
-def drop_db():
+def dropdb():
     """Cleans database"""
     db.drop_all()
