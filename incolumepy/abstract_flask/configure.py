@@ -13,7 +13,7 @@ class Config:
     MAIL_USERNAME = os.environ.get('EMAIL_USER')
     MAIL_PASSWORD = os.environ.get('EMAIL_PW')
     # temas bootstrap(https://bootswatch.com/) ['materia', 'cosmo', 'lux', 'cerulean', 'litera']
-    FLASK_ADMIN_SWATCH = 'cerulean'
+    FLASK_ADMIN_SWATCH = 'yeti'
 
 
 def init_app(app):
