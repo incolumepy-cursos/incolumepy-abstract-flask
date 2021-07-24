@@ -36,6 +36,7 @@ class UserAdmin(ModelView):
         "outcast",
     ]
     column_searchable_list = ["fullname"]
+    column_filters = ["superadmin", "admin", "outcast", "email"]
 
     @action("tornar_admin", "Alternar Admin status", "Confirma?")
     def toggle_admin_status(self, ids):
