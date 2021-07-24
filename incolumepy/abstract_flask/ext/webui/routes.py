@@ -17,7 +17,7 @@ def home():
 @bp.route("/post/<int:post_id>")
 def post(post_id):
     title = 'Post'
-    post = posts[post_id]
+    post = posts[post_id - 1]
     return render_template("post.html", title=title, post=post)
 
 
