@@ -4,7 +4,7 @@ __author__ = "@britodfbr"
 from flask import flash
 from flask_admin import Admin
 from flask_admin.actions import action
-from flask_admin.contrib.sqla import ModelView
+from flask_admin.contrib.sqla import ModelView, filters
 from incolumepy.abstract_flask.ext.dbase import db
 from incolumepy.abstract_flask.ext.dbase.models import User, Post, Comment, Category
 import re
@@ -36,7 +36,17 @@ class UserAdmin(ModelView):
         "outcast",
     ]
     column_searchable_list = ["fullname"]
-    column_filters = ["superadmin", "admin", "outcast", "email"]
+    column_filters = [
+        "superadmin",
+        "admin",
+        "outcast",
+        filters.FilterLike(
+            User.email,
+            "dominio",
+            options=(("presidencia", "presidência"), ("planalto", "Planalto"), ("gmail", "Gmail"))
+        ),
+        "email",
+    ]
 
     @action("tornar_admin", "Alternar Admin status", "Confirma?")
     def toggle_admin_status(self, ids):
