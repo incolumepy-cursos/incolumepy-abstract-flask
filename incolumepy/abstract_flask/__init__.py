@@ -4,7 +4,7 @@ __author__ = '@britodfbr'
 from pathlib import Path
 from flask import Flask, send_from_directory, send_file, redirect, url_for
 from . import configure
-from .ext import webui, dbase, cli
+from .ext import webui, dbase, cli, admin
 
 
 def minimal_app():
@@ -17,6 +17,7 @@ def minimal_app():
 
 def create_app():
     app = minimal_app()
+    admin.init_app(app)
     webui.init_app(app)
     # app.add_url_rule('/favicon.ico',
     #                  redirect_to=url_for('static', filename='images/favicons/favicon.ico'))
