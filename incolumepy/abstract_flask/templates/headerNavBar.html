@@ -38,12 +38,12 @@
                     <li><a href="{{url_for('webui.styles')}}" title="">Styles</a></li>
                     <li><a href="{{url_for('webui.about')}}" title="">About</a></li>
                     {% if current_user.is_authenticated %}
-                    <li><a href="#" title="">Perfil</a></li>
+                    <li><a href="{{url_for('webui.generic_page', title='Perfil')}}" title="">Perfil</a></li>
                     <li><a href="/admin" title="">Admin</a></li>
-                    <li><a href="{{logout_user}}" title="">Logout</a></li>
+                    <li><a href="{{url_for('logout')}}" title="">Logout</a></li>
                     {% else %}
-                    <li><a href="#" title="">Login</a></li>
-                    <li><a href="#" title="">Register</a></li>
+                    <li><a href="{{url_for('auth.login')}}" title="">Login</a></li>
+                    <li><a href="{{url_for('webui.generic_page', title='Register')}}" title="">Register</a></li>
                     {% endif %}
                 </ul> <!-- end header__nav -->
 
