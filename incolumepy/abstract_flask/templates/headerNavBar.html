@@ -37,7 +37,14 @@
                     </li>
                     <li><a href="{{url_for('webui.styles')}}" title="">Styles</a></li>
                     <li><a href="{{url_for('webui.about')}}" title="">About</a></li>
-                    <li><a href="{{url_for('webui.contact')}}" title="">Contact</a></li>
+                    {% if current_user.is_authenticated %}
+                    <li><a href="#" title="">Perfil</a></li>
+                    <li><a href="/admin" title="">Admin</a></li>
+                    <li><a href="{{logout_user}}" title="">Logout</a></li>
+                    {% else %}
+                    <li><a href="#" title="">Login</a></li>
+                    <li><a href="#" title="">Register</a></li>
+                    {% endif %}
                 </ul> <!-- end header__nav -->
 
                 <a href="#0" title="Close Menu" class="s-header__overlay-close close-mobile-menu">Close</a>

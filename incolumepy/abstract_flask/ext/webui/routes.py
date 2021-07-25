@@ -36,7 +36,7 @@ def styles():
 
 @bp.route('/contact.html')
 def contact():
-    return render_template('generic_page.html', title='Contact', content='')
+    return render_template('generic_page.html', title='Contact', content='Contact')
 
 
 @bp.route('/category.html')

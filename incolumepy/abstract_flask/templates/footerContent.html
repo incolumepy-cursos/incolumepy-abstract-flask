@@ -2,28 +2,15 @@
         <div class="s-footer__main">
 
             <div class="row">
-
-                <div class="column large-4 medium-6 tab-12 s-footer__info">
-                    <!--
-                    <h5>About Our Site</h5>
-
-                    <p>
-                    Lorem ipsum Ut velit dolor Ut labore id fugiat in ut fugiat nostrud qui in dolore commodo eu magna Duis cillum dolor officia esse mollit proident Excepteur exercitation nulla. Lorem ipsum In reprehenderit commodo aliqua irure labore.
-                    </p>
-                -->
-                </div> <!-- end s-footer__info -->
-
-                <div class="column large-2 medium-3 tab-6 s-footer__site-links">
-
+                <div class="column large-4 medium-6 tab-6 s-footer__site-links">
                     <h5>Site Links</h5>
-
-                    <ul>
+                    <ul style="list-style-type: disc; -webkit-columns: 2; -moz-columns: 2; columns: 2; list-style-position: inside;//this is important addition">
                         <li><a href="{{url_for('webui.about')}}">About Us</a></li>
                         <li><a href="{{url_for('webui.generic_page', title='FAQ')}}">FAQ</a></li>
                         <li><a href="{{url_for('webui.generic_page', title='Terms')}}">Terms</a></li>
                         <li><a href="{{url_for('webui.generic_page', title='Privacy Policy')}}">Privacy Policy</a></li>
+                        <li><a href="{{url_for('webui.contact')}}" title="">Contact</a></li>
                     </ul>
-
                 </div> <!-- end s-footer__site-links -->
 
                 <div class="column large-6 medium-3 tab-6 s-footer__social-links">
