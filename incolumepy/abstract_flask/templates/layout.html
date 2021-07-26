@@ -39,19 +39,34 @@
 <body id="top">
 
 
-    <!-- preloader
-    ================================================== -->
-    <header class="s-header">
-        {% include "headerNavBar.html" %}
-        {% block header %} {% endblock %}
-    </header> <!-- end header -->
+<!-- preloader
+================================================== -->
+<div id="preloader">
+    <div id="loader"></div>
+</div>
 
 
-    <!-- header
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader"></div>
-    </div>
+<!-- header
+================================================== -->
+<header class="s-header">
+{% include "headerNavBar.html" %}
+{% block header %} {% endblock %}
+</header> <!-- end header -->
+
+<!-- flash messages
+================================================= -->
+<div class="col-md-8">
+  {%  with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{message}}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</div><!-- end flashes -->
 
 
     <!-- masonry

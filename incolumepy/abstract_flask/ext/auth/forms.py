@@ -18,7 +18,7 @@ class RegisterForm(FlaskForm):
     password_confirm = PasswordField(
         "Confirm Password", validators=[DataRequired(), EqualTo("password")]
     )
-    birthdate = DateTimeField(validators=[])
+    birthdate = DateTimeField("birthdate", format="%Y-%m-%d", validators=[])
     submit = SubmitField('Sign Up')
 
     def validate_username(self, field):
