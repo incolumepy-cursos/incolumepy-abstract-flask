@@ -7,26 +7,32 @@
 <div class="row">
     <form name="registerForm" id="registerForm" method="post" action="" autocomplete="off">
         <fieldset>
-    fullname
-    username
-    email
-    password
-    birthdate
             <div class="form-field">
-                <input name="cName" id="cName" class="h-full-width" placeholder="Your Name" value="" type="text">
+                <input name="fullname" id="fullname" class="h-full-width" placeholder="Your Full Name" value="" type="text">
             </div>
             <div class="form-field">
-                <input name="cEmail" id="cEmail" class="h-full-width" placeholder="Your Email" value="" type="text">
+                <input name="username" id="username" class="h-full-width" placeholder="Your username" value="" type="text">
             </div>
             <div class="form-field">
-                <input name="cWebsite" id="cWebsite" class="h-full-width" placeholder="Website" value="" type="text">
+                <input name="email" id="email" class="h-full-width" placeholder="Your Email Account" value="" type="text">
+            </div>
+            <div class="form-field">
+                <input name="confirm_email" id="confirm_email" class="h-full-width" placeholder="Your same Email Account" value="" type="text">
+            </div>
+            <div class="form-field">
+                <input name="password" id="password" class="h-full-width" placeholder="Secret Key" type="password">
+            </div>
+            <div class="form-field">
+                <input name="confirm_password" id="confirm_password" class="h-full-width" placeholder="Same Secret Key again" type="password">
             </div>
             <div class="message form-field">
-                <textarea name="cMessage" id="cMessage" class="h-full-width" placeholder="Your Message"></textarea>
+                <input name="birthdate" id="birthdate" class="h-full-width" placeholder="Your Birthdate" type="datetime-local">
             </div>
-            <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large h-full-width" value="Add Comment" type="submit">
+            <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large h-full-width" value="Sing Up" type="submit">
         </fieldset>
+        <p> Already have an account? <a href="{{url_for('auth.login')}}">Log In</a></p>
     </form>
+
 </div>
 {% endblock %}
 {% block footer %} {% endblock %}
