@@ -30,6 +30,12 @@ class User(db.Model, UserMixin):
         ...
 
 
+# class Group(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(150), nullable=False)
+#     users = db.relationship("User", backref="users", lazy=True)
+
+
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
