@@ -43,7 +43,7 @@
                     <li><a href="{{url_for('logout')}}" title="">Logout</a></li>
                     {% else %}
                     <li><a href="{{url_for('auth.login')}}" title="">Login</a></li>
-                    <li><a href="{{url_for('webui.generic_page', title='Register')}}" title="">Register</a></li>
+                    <li><a href="{{url_for('auth.register', title='Register')}}" title="">Sing In</a></li>
                     {% endif %}
                 </ul> <!-- end header__nav -->
 

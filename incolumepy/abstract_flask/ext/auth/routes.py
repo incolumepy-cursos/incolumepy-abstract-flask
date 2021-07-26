@@ -5,7 +5,7 @@ from flask import Blueprint, render_template, url_for, redirect, flash
 from flask_login import current_user, logout_user
 from incolumepy.abstract_flask.ext.dbase.models import User
 from incolumepy.abstract_flask.ext.dbase import db
-
+from incolumepy.abstract_flask.ext.auth.forms import RegisterForm
 bp = Blueprint("auth", __name__, template_folder="templates")
 
 
@@ -13,7 +13,7 @@ bp = Blueprint("auth", __name__, template_folder="templates")
 def register():
     if current_user.is_authenticated:
         return redirect(url_for("webui.home"))
-    form = None  # RegistrationForm()
+    form = RegisterForm()
     if form.validate_on_submit():
         user = User(
             fullname=form.fullname.data,

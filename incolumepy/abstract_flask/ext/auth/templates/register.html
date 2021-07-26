@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block body %}
+<div class="row">
+    <form name="registerForm" id="registerForm" method="post" action="" autocomplete="off">
+        <fieldset>
+    fullname
+    username
+    email
+    password
+    birthdate
+            <div class="form-field">
+                <input name="cName" id="cName" class="h-full-width" placeholder="Your Name" value="" type="text">
+            </div>
+            <div class="form-field">
+                <input name="cEmail" id="cEmail" class="h-full-width" placeholder="Your Email" value="" type="text">
+            </div>
+            <div class="form-field">
+                <input name="cWebsite" id="cWebsite" class="h-full-width" placeholder="Website" value="" type="text">
+            </div>
+            <div class="message form-field">
+                <textarea name="cMessage" id="cMessage" class="h-full-width" placeholder="Your Message"></textarea>
+            </div>
+            <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large h-full-width" value="Add Comment" type="submit">
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
+{% block footer %} {% endblock %}
