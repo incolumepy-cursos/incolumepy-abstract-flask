@@ -2,8 +2,13 @@
 # -*- coding: utf-8 -*-
 __author__ = '@britodfbr'
 import datetime as dt
-from . import db
 from flask_login import UserMixin
+from . import db, loginmanager, bc
+
+
+@loginmanager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
 
 
 class User(db.Model, UserMixin):

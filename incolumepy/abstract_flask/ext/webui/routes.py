@@ -4,7 +4,7 @@ __author__ = '@britodfbr'
 from pathlib import Path
 from markdown import markdown
 from flask import Blueprint, render_template, current_app, request
-from incolumepy.abstract_flask.ext.models import posts, users
+from incolumepy.abstract_flask.ext.dbase.models import posts, users
 bp = Blueprint('webui', __name__)
 
 

@@ -2,22 +2,16 @@
 # -*- coding: utf-8 -*-
 __author__ = '@britodfbr'
 from pathlib import Path
-from flask_bcrypt import Bcrypt
-from flask_login import LoginManager
 from flask import Flask, send_from_directory, send_file, redirect, url_for
 from . import configure
 from .ext import webui, dbase, cli, admin, auth
-
-loginmanager = LoginManager()
-bc = Bcrypt()
+from .ext.dbase.models import loginmanager
 
 
 def minimal_app():
     app = Flask(__name__)
     configure.init_app(app)
     dbase.init_app(app)
-    bc.init_app(app)
-    loginmanager.init_app(app)
     cli.init_app(app)
     auth.init_app(app)
     return app

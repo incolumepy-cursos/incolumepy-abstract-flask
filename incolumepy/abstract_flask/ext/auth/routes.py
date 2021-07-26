@@ -25,12 +25,12 @@ def register():
     return render_template("register.html", form=form, title="Register")
 
 
-@bp.route('/login', methods=['GET', 'POST'])
+@bp.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template('login.html', title='Login')
+    return render_template("login.html", title="Login")
 
 
-@bp.route('/logout')
+@bp.route("/logout")
 def logout():
     logout_user()
     return redirect(url_for("main.home"))
