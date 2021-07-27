@@ -3,7 +3,7 @@
 __author__ = '@britodfbr'
 from flask_wtf import FlaskForm
 from incolumepy.abstract_flask.ext.dbase.models import User
-from wtforms import StringField, PasswordField, SubmitField, DateTimeField
+from wtforms import StringField, PasswordField, SubmitField, DateTimeField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 
 
@@ -31,3 +31,9 @@ class RegisterForm(FlaskForm):
         if user:
             raise ValidationError(f'alrady exist <<{field.data}>>, choice another')
 
+
+class LoginForm(FlaskForm):
+    email = StringField("Email", validators=[DataRequired(), Email()])
+    password = PasswordField("Password", validators=[DataRequired()])
+    remember = BooleanField('Remember me')
+    submit = SubmitField('Login')
