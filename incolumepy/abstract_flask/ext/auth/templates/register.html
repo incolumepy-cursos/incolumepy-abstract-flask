@@ -9,7 +9,7 @@
         {{ form.hidden_tag() }}
         <fieldset>
             <div class="form-field">
-                {% if form.birthdate.errors %}
+                {% if form.fullname.errors %}
                 {{form.fullname(id="fullname", class="h-full-width", placeholder="Your Full Name", value="", type="text")}}
                 <div class="alert-box alert-box--error">
                     {% for error in form.birthdate.errors %}
@@ -21,7 +21,7 @@
                 {% endif %}
             </div>
             <div class="form-field">
-                {% if form.birthdate.errors %}
+                {% if form.username.errors %}
                 {{form.username(id="username", class="h-full-width", placeholder="Your username", value="", type="text")}}
                 <div class="alert-box alert-box--error">
                     {% for error in form.birthdate.errors %}
@@ -33,7 +33,7 @@
                 {% endif %}
             </div>
             <div class="form-field">
-                {% if form.birthdate.errors %}
+                {% if form.email.errors %}
                 {{form.email(id="email", class="h-full-width", placeholder="Your Email Account", value="", type="text")}}
                 <div class="alert-box alert-box--error">
                     {% for error in form.birthdate.errors %}
@@ -45,7 +45,7 @@
                 {% endif %}
             </div>
             <div class="form-field">
-                {% if form.birthdate.errors %}
+                {% if form.email_confirm.errors %}
                 {{form.email_confirm(id="email_confirm", class="h-full-width", placeholder="Your same Email Account", value="", type="text")}}
                 <div class="alert-box alert-box--error">
                     {% for error in form.birthdate.errors %}
@@ -57,7 +57,7 @@
                 {% endif %}
             </div>
             <div class="form-field">
-                {% if form.birthdate.errors %}
+                {% if form.password.errors %}
                 {{form.password(id="password", class="h-full-width", placeholder="Secret Key", type="password")}}
                 <div class="alert-box alert-box--error">
                     {% for error in form.birthdate.errors %}
@@ -69,7 +69,7 @@
                 {% endif %}
             </div>
             <div class="form-field">
-                {% if form.birthdate.errors %}
+                {% if form.password_confirm.errors %}
                 {{form.password_confirm(id="password_confirm", class="h-full-width", placeholder="Same Secret Key", type="password")}}
                 <div class="alert-box alert-box--error">
                     {% for error in form.birthdate.errors %}
