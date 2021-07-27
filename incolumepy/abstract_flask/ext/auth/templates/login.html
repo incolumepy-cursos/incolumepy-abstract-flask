@@ -8,12 +8,33 @@
     <form name="loginForm" id="loginForm" method="post" action="" autocomplete="off">
         <fieldset>
             <div class="form-field">
-                <input name="email" id="email" class="h-full-width" placeholder="Your Email" value="" type="text">
+                {% if form.email.errors %}
+                    {{ form.email(id="email", class="h-full-width alert-box alert-box--error", placeholder="Your Email", value="", type="text")}}
+                    <div class="alert-box alert-box--error">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else%}
+                    {{ form.email(id="email", class="h-full-width", placeholder="Your Email", value="", type="text")}}
+                {% endif %}
             </div>
             <div class="form-field">
-                <input name="password" id="password" class="h-full-width" placeholder="password" value="" type="password">
+                {% if form.password.errors %}
+                    {{ form.password(id="password", class="h-full-width alert-box alert-box--error", placeholder="password", value="", type="password")}}
+                    <div class="alert-box alert-box--error">
+                        {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else%}
+                    {{ form.password(id="password", class="h-full-width", placeholder="password", value="", type="password")}}
+                {% endif %}
             </div>
-            <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large h-full-width" value="Login" type="submit">
+            <div class="form-field">
+                 {{ form.remember.label(class="form-check-label") }} {{ form.remember(class="form-check-input") }}
+            </div>
+            {{ form.submit(class="btn btn--primary btn-wide btn--large h-full-width", value="Login")}}
         </fieldset>
         <p>
             Not a member? <a href="{{url_for('auth.register')}}"> Sign Up</a> <br/>

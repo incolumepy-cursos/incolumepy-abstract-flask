@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 __author__ = "@britodfbr"
-from flask import Blueprint, render_template, url_for, redirect, flash
-from flask_login import current_user, logout_user
+from flask import Blueprint, render_template, url_for, redirect, flash, request
+from flask_login import current_user, logout_user, login_user
 from incolumepy.abstract_flask.ext.dbase.models import User
 from incolumepy.abstract_flask.ext.dbase import db
-from incolumepy.abstract_flask.ext.auth.forms import RegisterForm
+from incolumepy.abstract_flask.ext.auth.forms import RegisterForm, LoginForm
 bp = Blueprint("auth", __name__, template_folder="templates")
 
 
@@ -31,7 +31,21 @@ def register():
 
 @bp.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("login.html", title="Login")
+    if current_user.is_authenticated:
+        return redirect(url_for("webui.home"))
+    form = LoginForm()
+    if form.validate_on_submit():
+        print(form.password.data, form.email.data)
+        user = User.query.filter_by(email=form.email.data).first()
+        print(user)
+        if user.check_password(form.password.data):
+            login_user(user, remember=form.remember.data)
+            flash("Login with success", 'success')
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('webui.home'))
+        else:
+            flash('Please check your user or password', 'danger')
+    return render_template("login.html", form=form, title="Login")
 
 
 @bp.route("/logout")
