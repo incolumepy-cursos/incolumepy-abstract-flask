@@ -9,22 +9,76 @@
         {{ form.hidden_tag() }}
         <fieldset>
             <div class="form-field">
+                {% if form.birthdate.errors %}
                 {{form.fullname(id="fullname", class="h-full-width", placeholder="Your Full Name", value="", type="text")}}
+                <div class="alert-box alert-box--error">
+                    {% for error in form.birthdate.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.fullname(id="fullname", class="h-full-width", placeholder="Your Full Name", value="", type="text")}}
+                {% endif %}
             </div>
             <div class="form-field">
+                {% if form.birthdate.errors %}
                 {{form.username(id="username", class="h-full-width", placeholder="Your username", value="", type="text")}}
+                <div class="alert-box alert-box--error">
+                    {% for error in form.birthdate.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.username(id="username", class="h-full-width", placeholder="Your username", value="", type="text")}}
+                {% endif %}
             </div>
             <div class="form-field">
+                {% if form.birthdate.errors %}
                 {{form.email(id="email", class="h-full-width", placeholder="Your Email Account", value="", type="text")}}
+                <div class="alert-box alert-box--error">
+                    {% for error in form.birthdate.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.email(id="email", class="h-full-width", placeholder="Your Email Account", value="", type="text")}}
+                {% endif %}
             </div>
             <div class="form-field">
+                {% if form.birthdate.errors %}
                 {{form.email_confirm(id="email_confirm", class="h-full-width", placeholder="Your same Email Account", value="", type="text")}}
+                <div class="alert-box alert-box--error">
+                    {% for error in form.birthdate.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.email_confirm(id="email_confirm", class="h-full-width", placeholder="Your same Email Account", value="", type="text")}}
+                {% endif %}
             </div>
             <div class="form-field">
+                {% if form.birthdate.errors %}
                 {{form.password(id="password", class="h-full-width", placeholder="Secret Key", type="password")}}
+                <div class="alert-box alert-box--error">
+                    {% for error in form.birthdate.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.password(id="password", class="h-full-width", placeholder="Secret Key", type="password")}}
+                {% endif %}
             </div>
             <div class="form-field">
+                {% if form.birthdate.errors %}
                 {{form.password_confirm(id="password_confirm", class="h-full-width", placeholder="Same Secret Key", type="password")}}
+                <div class="alert-box alert-box--error">
+                    {% for error in form.birthdate.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.password_confirm(id="password_confirm", class="h-full-width", placeholder="Same Secret Key", type="password")}}
+                {% endif %}
             </div>
             <div class="message form-field">
                 {% if form.birthdate.errors %}
