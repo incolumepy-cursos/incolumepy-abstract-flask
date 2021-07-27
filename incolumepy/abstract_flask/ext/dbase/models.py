@@ -27,13 +27,12 @@ class User(db.Model, UserMixin):
     posts = db.relationship("Post", backref="author", lazy=True)
     comments = db.relationship("Comment", backref="comment", lazy=True)
 
-    @property
-    def password(self):
-        raise AttributeError("password not readable")
-
-    @password.setter
-    def password(self, pwd):
-        self.password = bc.generate_password_hash(pwd).decode("utf-8")
+    def __init__(self, fullname, username, email, password, birthdate):
+        self.username = username
+        self.password = bc.generate_password_hash(password).decode("utf-8")
+        self.fullname = fullname
+        self.email = email
+        self.birthdate = birthdate
 
     def check_password(self, pwd):
         return bc.check_password_hash(self.password, pwd)
