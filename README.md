@@ -1,5 +1,5 @@
 # Python web com Flask
-Estes projeto reflete todo o conhecimento adiquido nos cursos de Flask, que realizei recentemente.
+Este projeto reflete todo o conhecimento adquido nos cursos de Flask, que realizei recentemente.
 
 ## Objetivos
 Objetivo Geral deste projeto é fixar o conhecimento adquirido,
