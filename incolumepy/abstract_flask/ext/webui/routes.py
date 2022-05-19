@@ -24,7 +24,7 @@ def post(post_id):
 @bp.route('/about.html')
 def about():
     title = "About"
-    readme = Path(current_app.root_path[:current_app.root_path.index('incolumepy', 50)]).joinpath('README.md')
+    readme = Path(current_app.root_path).parents[1].joinpath('README.md')
     content = markdown(readme.read_text())
     return render_template('about.html', title=title, content=content)
 
